@@ -41,7 +41,36 @@ const cards = [
     image: `url(https://i.pinimg.com/originals/24/7c/ef/247cef7737160db9e010a788a8c64db1.png),  linear-gradient(to right, rgba(113,113,230,.7), rgba(113,113,230,.7))`
   },
 ];
-
+const plans = [
+  {
+    logo: "https://www.logolynx.com/images/logolynx/5a/5a00a038e7b8c6c63a3baa64aea86b1b.png",
+    title: "EXPERT PLAN ONLY",
+    company: "Booking",
+    note: "Enable Bookin.com channel optimization by our expertor team.",
+    link: "",
+  },
+  {
+    logo: "https://upload.wikimedia.org/wikipedia/commons/5/5b/Expedia_2012_logo.svg",
+    title: "EXPERT PLAN ONLY",
+    company: "Expedia",
+    note: "Enable Bookin.com channel optimization by our expertor team.",
+    link: "",
+  },
+  {
+    logo: "https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_B%C3%A9lo.svg",
+    title: "EXPERT PLAN ONLY",
+    company: "Airbnb",
+    note: "Enable Bookin.com channel optimization by our expertor team.",
+    link: "",
+  },
+  {
+    logo: "https://www.logolynx.com/images/logolynx/5a/5a00a038e7b8c6c63a3baa64aea86b1b.png",
+    title: "EXPERT PLAN ONLY",
+    company: "Booking",
+    note: "Enable Bookin.com channel optimization by our expertor team.",
+    link: "#",
+  },
+];
 
 const Overview = () => (
   <Grid fluid={true}>
@@ -49,80 +78,40 @@ const Overview = () => (
     <br />
     <br />
     <Row>
-    {cards
-          ? cards.map((c) => (
-            <Col lg={4} sm={6} xs={12} className="mb-30">
+      {cards
+        ? cards.map((c, i) => (
+          <Col key={i} lg={4} sm={6} xs={12} className="mb-30">
             <SimpleCard title={c.text} image={c.image} icon={<CoinIcon />} />
           </Col>
-          ))
-          : null}
+        ))
+        : null}
     </Row>
 
     <Row>
-      <Col
-        lg={4}
-        sm={6}
-        xs={12}
-        className="mb-30"
-        style={{ marginBottom: "15px" }}
-      >
-        <StickerCard
-          title="EXPERT PLAN ONLY"
-          subtitle=""
-          
-          price="Booking"
-          indicator="up"
-          indicatorText="Revenue up"
-          note="Enable Bookin.com channel optimization by our expertor team."
-          link="#"
-          linkText="Full Details"
-        />
-      </Col>
-      <Col
-        lg={4}
-        sm={6}
-        xs={12}
-        className="mb-30"
-        style={{ marginBottom: "15px" }}
-      >
-        <StickerCard
-          title="Total Order"
-          subtitle=""
-          
-          price="Expedia"
-          indicator="down"
-          indicatorText="Order down"
-          note="Enable Bookin.com channel optimization by our expertor team."
-          link="#"
-          linkText="Full Details"
-        />
-      </Col>
-      <Col lg={4} sm={6} xs={12} style={{ marginBottom: "15px" }}>
-        <StickerCard
-          title="New Customer"
-          subtitle=""
-          
-          price="Airbnb"
-          indicator="up"
-          indicatorText="Customer up"
-          note="Enable Bookin.com channel optimization by our expertor team."
-          link="#"
-          linkText="Full Details"
-        />
-      </Col>
-      <Col lg={4} sm={6} xs={12} style={{ marginBottom: "15px" }}>
-        <StickerCard
-          title="Total Delivery"
-          subtitle=""
-          
-          price="Booking"
-          indicator="up"
-          indicatorText="Delivery up"
-          note="Enable Bookin.com channel optimization by our expertor team."
-          link="#"
-          linkText="Full Details"
-        />
-      </Col>
+      {
+        plans.map(({ logo, title, company, note, link }, i) => {
+          console.log('i :>> ', i);
+          return (
+            <Col
+              key={i}
+              lg={4}
+              sm={6}
+              xs={12}
+              className="mb-30"
+              style={{ marginBottom: "15px" }}
+            >
+              <StickerCard
+                num={i}
+                logo={logo}
+                title={title}
+                subtitle=""
+                price={company}
+                note={note}
+                link={link}
+              />
+            </Col>
+          )
+        })}
     </Row>
   </Grid>
 );
