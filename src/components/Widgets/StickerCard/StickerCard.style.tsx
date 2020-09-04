@@ -43,9 +43,9 @@ export const SubTitle = styled("span", ({ $theme }) => ({
   lineHeight: "1.2",
   color: $theme.colors.textNormal,
   marginBottom: "0px",
-  background:
-    "url(https://www.logolynx.com/images/logolynx/5a/5a00a038e7b8c6c63a3baa64aea86b1b.png) no-repeat",
-  backgroundSize: "contain",
+  // background:
+  //   "url(https://www.logolynx.com/images/logolynx/5a/5a00a038e7b8c6c63a3baa64aea86b1b.png) no-repeat",
+  backgroundSize: "contain !important",
   height: "30px",
 }));
 
@@ -86,3 +86,61 @@ export const Link = styled("a", ({ $theme }) => ({
   lineHeight: "1.2",
   textDecoration: "none",
 }));
+export const Label = styled("label", ({ $theme }) => ({
+  ...$theme.typography.fontBold13,
+  fontFamily: $theme.typography.primaryFontFamily,
+  color: $theme.colors.purple400,
+  lineHeight: "1.2",
+  textDecoration: "none",
+}));
+
+
+/*
+.tgl {
+    display: none;
+}
+.tgl-light + .tgl-btn {
+    background: #f0f0f0;
+    border-radius: 2em;
+    padding: 2px;
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease;
+}
+.tgl + .tgl-btn {
+    outline: 0;
+    display: block;
+    width: 4em;
+    height: 2em;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.tgl-light + .tgl-btn:after {
+    border-radius: 50%;
+    background: #fff;
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+}
+.tgl + .tgl-btn:after {
+    left: 0;
+}
+.tgl + .tgl-btn:after {
+    position: relative;
+    display: block;
+    content: "";
+    width: 50%;
+    height: 100%;
+}
+.tgl-light:checked + .tgl-btn {
+    background: #9FD6AE;
+}
+.tgl:checked + .tgl-btn:after {
+    left: 50%;
+}
+.tgl + .tgl-btn {
+    box-sizing: border-box;
+}
+*/

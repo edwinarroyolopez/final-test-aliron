@@ -80,8 +80,9 @@ const Topbar = ({ refs }: any) => {
         </Logo>
 
         {routes
-          ? routes.map((route) => (
+          ? routes.map((route, i) => (
             <NavLink
+              key={i}
               to={route.link}
               exact={route.link}
               activeStyle={{
@@ -95,13 +96,13 @@ const Topbar = ({ refs }: any) => {
           : null}
       </TopbarLeftSide>
 
-        <Input
-          value={''}
-          placeholder='Search someting... '
-          onChange={() => { }}
-          clearable
-          style={{borderRadius:"10px"}}
-        />
+      <Input
+        value={''}
+        placeholder='Search someting... '
+        onChange={() => { }}
+        clearable
+        style={{ borderRadius: "10px" }}
+      />
 
       <DrawerWrapper>
         <DrawerIcon onClick={() => setIsDrawerOpen(true)}>
